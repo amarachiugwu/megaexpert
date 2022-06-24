@@ -1,5 +1,12 @@
 import React from 'react';
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import AboutScreen from './screens/AboutScreen';
+import ContactScreen from './screens/ContactScreen';
+import FAQScreen from './screens/FAQScreen';
+import HomeScreen from "./screens/HomeScreen";
+import LoginScreen from './screens/LoginScreen';
+import MissionVisionScreen from './screens/MissionVisionScreen';
+import SignupScreen from './screens/SignupScreen';
 function App() {
   return (
     <BrowserRouter>
@@ -10,7 +17,7 @@ function App() {
             <div className="container">
               <div className="header-area">
                 <div className="logo">
-                    <Link to="/index">
+                    <Link to="/">
                         <img src="/assets/images/logo.png" alt="logo" />
                     </Link>
                 </div>
@@ -19,14 +26,14 @@ function App() {
                 </div>
                 <ul className="menu">
                     <li>
-                        <Link to="/index">Home</Link>
+                        <Link to="/">Home</Link>
                     </li>
 
                     <li>
                         <Link to="/about">About</Link>
                     </li>
 
-                    <li>
+                    <li className="has-sub-menu">
                         <Link to="#">Plan</Link>
                         <ul className="sub-menu">
                             <li>
@@ -53,7 +60,7 @@ function App() {
                         <Link to="/contact">Contact</Link>
                     </li>
                     
-                    <li>
+                    <li className="has-sub-menu">
                         <Link to="#">Account</Link>
                         <ul className="sub-menu">
                             <li>
@@ -72,11 +79,17 @@ function App() {
 
         <main>
           <Routes>
-            <Route path="/" element={"Hello world"} exact></Route>
+            <Route path="/" element={<HomeScreen />} exact></Route>
+            <Route path="/about" element={<AboutScreen />}></Route>
+            <Route path="/mission-vision" element={<MissionVisionScreen />}></Route>
+            <Route path="/faq" element={<FAQScreen />}></Route>
+            <Route path="/contact" element={<ContactScreen />}></Route>
+            <Route path="/login" element={<LoginScreen />}></Route>
+            <Route path="/sign-up" element={<SignupScreen />}></Route>
           </Routes> 
         </main>
 
-        <footer className="footer-section bg_img" style={{ background: "url(assets/images/footer/bg.png) no-repeat center top" }}>
+        <footer className="footer-section bg_img" style={{ background: "url(/assets/images/footer/bg.png) no-repeat center top" }}>
           <div className="container">
               <div className="row gy-5">
                   <div className=" col-xl-3 col-lg-5 col-md-6 col-sm-6">
