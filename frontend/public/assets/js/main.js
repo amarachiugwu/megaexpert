@@ -9,21 +9,22 @@ $(window).on('load', function () {
 //Menu Dropdown
 $("ul>li>.sub-menu").parent("li").addClass("has-sub-menu");
 
-$('.menu li a').on('click', function (e) {
-  var element = $(this).parent('li');
-  if (element.hasClass('open')) {
-    element.removeClass('open');
-    element.find('li').removeClass('open');
-    element.find('ul').slideUp(400, "swing");
-  } else {
-    element.addClass('open');
-    element.children('ul').slideDown(400, "swing");
-    element.siblings('li').children('ul').slideUp(400, "swing");
-    element.siblings('li').removeClass('open');
-    element.siblings('li').find('li').removeClass('open');
-    element.siblings('li').find('ul').slideUp(400, "swing");
-  }
-});
+// $('.menu li a').on('click', function (e) {
+//   var element = $(this).parent('li');
+//   if (element.hasClass('open')) {
+//     element.removeClass('open');
+//     element.find('li').removeClass('open');
+//     element.find('ul').slideUp(400, "swing");
+//   } else {
+//     element.addClass('open');
+//     element.children('ul').slideDown(400, "swing");
+//     element.siblings('li').children('ul').slideUp(400, "swing");
+//     element.siblings('li').removeClass('open');
+//     element.siblings('li').find('li').removeClass('open');
+//     element.siblings('li').find('ul').slideUp(400, "swing");
+//   }
+// });
+
 $('.menu li .cmn--btn').on('click', function (e) {
   var ele = $(this).parent('li');
   ele.removeClass('open')
@@ -40,18 +41,19 @@ overlay.on('click', function() {
 
     
 // Responsive Menu
-var headerTrigger = $('.header-trigger');
-headerTrigger.on('click', function(){
-    $('.menu,.header-trigger').toggleClass('active')
-    $('.overlay').toggleClass('overlay-color')
-    $('.overlay').removeClass('active')
-});
+// var headerTrigger = $('.header-trigger');
+// headerTrigger.on('click', function(){
+//     $('.menu,.header-trigger').toggleClass('active')
+//     $('.overlay').toggleClass('overlay-color')
+//     $('.overlay').removeClass('active')
+// });
 
-var over = $('.overlay');
-over.on('click', function() {
-  $('.overlay').removeClass('overlay-color')
-  $('.menu, .header-trigger').removeClass('active')
-})
+// var over = $('.overlay');
+// over.on('click', function() {
+//   $('.overlay').removeClass('overlay-color')
+//   $('.menu, .header-trigger').removeClass('active')
+// })
+
 
 
 // Sticky Menu
@@ -60,6 +62,7 @@ window.addEventListener('scroll', function(){
   header.classList.toggle('sticky', window.scrollY > 0);
 
 });
+
 var prevScrollpos = window.pageYOffset;
 var scrollPosition = window.scrollY;
 if (scrollPosition >= 1) {
@@ -153,83 +156,85 @@ $('.banner-slider').slick({
 });
    
 
-$('.sponsor-slider').slick({
-  slidesToShow: 6,
-  slidesToScroll: 2,
-  infinite: true,
-  dots: false,
-  arrows: false,
-  autoplay: true,
-  autoplaySpeed: 3000,
-  responsive: [
-    {
-      breakpoint: 1200,
-      settings: {
-        slidesToShow: 5,
-        slidesToScroll: 1
-      }
-    },
-    {
-      breakpoint: 991,
-      settings: {
-        slidesToShow: 4,
-        slidesToScroll: 1
-      }
-    },
-    {
-      breakpoint: 767,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 1
-      }
-    },
-    {
-      breakpoint: 500,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1
-      }
-    },
+// $('.sponsor-slider').slick({
+//   slidesToShow: 6,
+//   slidesToScroll: 2,
+//   infinite: true,
+//   dots: false,
+//   arrows: false,
+//   autoplay: true,
+//   autoplaySpeed: 3000,
+//   responsive: [
+//     {
+//       breakpoint: 1200,
+//       settings: {
+//         slidesToShow: 5,
+//         slidesToScroll: 1
+//       }
+//     },
+//     {
+//       breakpoint: 991,
+//       settings: {
+//         slidesToShow: 4,
+//         slidesToScroll: 1
+//       }
+//     },
+//     {
+//       breakpoint: 767,
+//       settings: {
+//         slidesToShow: 3,
+//         slidesToScroll: 1
+//       }
+//     },
+//     {
+//       breakpoint: 500,
+//       settings: {
+//         slidesToShow: 2,
+//         slidesToScroll: 1
+//       }
+//     },
 
-  ]
-});
-$('.payment-gateway-slider').slick({
-  slidesToShow: 4,
-  slidesToScroll: 1,
-  infinite: true,
-  dots: false,
-  arrows: true,
-  autoplay: true,
-  autoplaySpeed: 3000,
-  margin: 20,
-  arrows:true,
-  nextArrow: '<i class="las la-angle-right arrow-left"></i>',
-  prevArrow: '<i class="las la-angle-left arrow-right"></i>',
-  responsive: [
-    {
-      breakpoint: 991,
-      settings: {
-        slidesToShow: 4,
-        slidesToScroll: 1
-      }
-    },
-    {
-      breakpoint: 767,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 1
-      }
-    },
-    {
-      breakpoint: 500,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1
-      }
-    },
+//   ]
+// });
 
-  ]
-});
+
+// $('.payment-gateway-slider').slick({
+//   slidesToShow: 4,
+//   slidesToScroll: 1,
+//   infinite: true,
+//   dots: false,
+//   arrows: true,
+//   autoplay: true,
+//   autoplaySpeed: 3000,
+//   margin: 20,
+//   arrows:true,
+//   nextArrow: '<i class="las la-angle-right arrow-left"></i>',
+//   prevArrow: '<i class="las la-angle-left arrow-right"></i>',
+//   responsive: [
+//     {
+//       breakpoint: 991,
+//       settings: {
+//         slidesToShow: 4,
+//         slidesToScroll: 1
+//       }
+//     },
+//     {
+//       breakpoint: 767,
+//       settings: {
+//         slidesToShow: 3,
+//         slidesToScroll: 1
+//       }
+//     },
+//     {
+//       breakpoint: 500,
+//       settings: {
+//         slidesToShow: 2,
+//         slidesToScroll: 1
+//       }
+//     },
+
+//   ]
+// });
 
 $(".counter-item").each(function () {
   $(this).isInViewport(function (status) {
@@ -241,89 +246,89 @@ $(".counter-item").each(function () {
     }
   });
 });
-   
 
-$('.testimonial-slider').slick({
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  infinite: true,
-  arrows: true,
-  dots: false,
-  autoplay: true,
-  pauseOnHover: true,
-  centerMode: true,
-  fade: true,
-  asNavFor: '.testimonial-img-slider',
-  nextArrow: '<i class="las la-arrow-right arrow-right"></i>',
-  prevArrow: '<i class="las la-arrow-left arrow-left"></i> ',
-});
-$('.testimonial-img-slider').slick({
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  asNavFor: '.testimonial-slider',
-  dots: true,
-  centerMode: true,
-  infinite: true,
-  focusOnSelect: true,
-  autoplay: true,
-  pauseOnHover: true,
-  arrows: false,
-  fade: true,
-  speed: 1000,
-});
+// $('.testimonial-slider').slick({
+//   slidesToShow: 1,
+//   slidesToScroll: 1,
+//   infinite: true,
+//   arrows: true,
+//   dots: false,
+//   autoplay: true,
+//   pauseOnHover: true,
+//   centerMode: true,
+//   fade: true,
+//   asNavFor: '.testimonial-img-slider',
+//   nextArrow: '<i class="las la-arrow-right arrow-right"></i>',
+//   prevArrow: '<i class="las la-arrow-left arrow-left"></i> ',
+// });
+
+// $('.testimonial-img-slider').slick({
+//   slidesToShow: 1,
+//   slidesToScroll: 1,
+//   asNavFor: '.testimonial-slider',
+//   dots: true,
+//   centerMode: true,
+//   infinite: true,
+//   focusOnSelect: true,
+//   autoplay: true,
+//   pauseOnHover: true,
+//   arrows: false,
+//   fade: true,
+//   speed: 1000,
+// });
 
 //Faq
-$('.faq-wrapper .faq-title, .faq-wrapper-two .faq-title-two').on('click', function (e) {
-  var element = $(this).parent('.faq-item, .faq-item-two');
-  if (element.hasClass('open')) {
-    element.removeClass('open');
-    element.find('.faq-content, .faq-content-two').removeClass('open');
-    element.find('.faq-content, .faq-content-two').slideUp(300, "swing");
-  } else {
-    element.addClass('open');
-    element.children('.faq-content, .faq-content-two').slideDown(300, "swing");
-    element.siblings('.faq-item, .faq-item-two').children('.faq-content, .faq-content-two').slideUp(300, "swing");
-    element.siblings('.faq-item, .faq-item-two').removeClass('open');
-    element.siblings('.faq-item, .faq-item-two').find('.faq-title, .faq-title-two').removeClass('open');
-    element.siblings('.faq-item, .faq-item-two').find('.faq-content, .faq-content-two').slideUp(300, "swing");
-  }
-});
+// $('.faq-wrapper .faq-title, .faq-wrapper-two .faq-title-two').on('click', function (e) {
+//   var element = $(this).parent('.faq-item, .faq-item-two');
+//   if (element.hasClass('open')) {
+//     element.removeClass('open');
+//     element.find('.faq-content, .faq-content-two').removeClass('open');
+//     element.find('.faq-content, .faq-content-two').slideUp(300, "swing");
+//   } else {
+//     element.addClass('open');
+//     element.children('.faq-content, .faq-content-two').slideDown(300, "swing");
+//     element.siblings('.faq-item, .faq-item-two').children('.faq-content, .faq-content-two').slideUp(300, "swing");
+//     element.siblings('.faq-item, .faq-item-two').removeClass('open');
+//     element.siblings('.faq-item, .faq-item-two').find('.faq-title, .faq-title-two').removeClass('open');
+//     element.siblings('.faq-item, .faq-item-two').find('.faq-content, .faq-content-two').slideUp(300, "swing");
+//   }
+// });
 
-$('.faq-tab-menu .item').on('click' ,function() {
-  $('.faq-tab-menu .item').removeClass('active')
-  $(this).addClass('active')
-});
+// $('.faq-tab-menu .item').on('click' ,function() {
+//   $('.faq-tab-menu .item').removeClass('active')
+//   $(this).addClass('active')
+// });
 
 
-$('.testimonial-slider-two').slick({
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  infinite: true,
-  dots: false,
-  arrows: false,
-  autoplay: true,
-  autoplaySpeed: 2000,
-  margin: 20,
-  centerMode:true,
-  responsive: [
-    {
-      breakpoint: 1199,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1
-      }
-    },
-    {
-      breakpoint: 767,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
-      }
-    },
+// $('.testimonial-slider-two').slick({
+//   slidesToShow: 3,
+//   slidesToScroll: 1,
+//   infinite: true,
+//   dots: false,
+//   arrows: false,
+//   autoplay: true,
+//   autoplaySpeed: 2000,
+//   margin: 20,
+//   centerMode:true,
+//   responsive: [
+//     {
+//       breakpoint: 1199,
+//       settings: {
+//         slidesToShow: 2,
+//         slidesToScroll: 1
+//       }
+//     },
+//     {
+//       breakpoint: 767,
+//       settings: {
+//         slidesToShow: 1,
+//         slidesToScroll: 1
+//       }
+//     },
     
 
-  ]
-});
+//   ]
+// });
 
 $( function() {
   $( "#btc-range" ).slider({

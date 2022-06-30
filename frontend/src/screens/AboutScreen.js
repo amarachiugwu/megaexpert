@@ -1,9 +1,13 @@
 import React from 'react'
 import BannerBox from '../components/BannerBox'
+import FeedBackBox from '../components/FeedBackBox';
+import HelpBox from '../components/HelpBox';
+import PaymentGatewayBox from '../components/PaymentGatewayBox';
 import ProfitCalculatorBox from '../components/ProfitCalculatorBox'
 import WhyUsBox from '../components/WhyUsBox'
 
 function AboutScreen() {
+
   return (
     <>
         
@@ -83,54 +87,16 @@ function AboutScreen() {
 
 
 
-        <section className="payment-gateway padding-bottom">
-            <div className="container">
-                <div className="row align-items-center gy-4">
-                    <div className="col-lg-5">
-                        <div className="section-header">
-                            <h2 className="title  fadeInUp" data--delay=".5s">We accept payment in crypto</h2>
-                            <p className=" fadeInUp" data--delay=".6s">
-                                We support the popular cryptocurrencies like Bitcoin, Ethereum, Tether, Litecoin, Dash, Binance, Solana, and many more.
-                            </p>
-                        </div>
-                    </div>
-                    <div className="col-lg-7  fadeInRight">
-                        <div className="payment-gateway-slider">
-                            <div className="sigle-slider">
-                                <div className="gateway-item">
-                                    <img src="/assets/images/gateway/icon1.png" alt="gateway"/>
-                                    <span className="coin-name">Bitcoin</span>
-                                </div>
-                            </div>
-                            <div className="sigle-slider">
-                                <div className="gateway-item">
-                                    <img src="/assets/images/gateway/icon2.png" alt="gateway"/>
-                                    <span className="coin-name">Ethereum</span>
-                                </div>
-                            </div>
-                            <div className="sigle-slider">
-                                <div className="gateway-item">
-                                    <img src="/assets/images/gateway/icon3.png" alt="gateway"/>
-                                    <span className="coin-name">Ripple</span>
-                                </div>
-                            </div>
-                            <div className="sigle-slider">
-                                <div className="gateway-item">
-                                    <img src="/assets/images/gateway/icon4.png" alt="gateway"/>
-                                    <span className="coin-name">Litecoin</span>
-                                </div>
-                            </div>
-                            <div className="sigle-slider">
-                                <div className="gateway-item">
-                                    <img src="/assets/images/gateway/icon2.png" alt="gateway"/>
-                                    <span className="coin-name">Ethereum</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <HelpBox/>
+   
+
+
+   
+        <FeedBackBox/>
+
+
+
+        <PaymentGatewayBox/>
 
 
 

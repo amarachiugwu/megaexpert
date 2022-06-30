@@ -65,7 +65,7 @@ function ContactScreen() {
         <div className="container">
             <div className="row gy-5 flex-column-reverse flex-lg-row">
                 <div className="col-lg-6 col-xl-7">
-                    <div className="row g-4 justify-content-center mb-4">
+                    {/* <div className="row g-4 justify-content-center mb-4">
                         <div className="col-md-6 col-lg-10 col-xl-6  fadeInLeft">
                             <div className="contact-info-item">
                                 <div className="contact-item-thumb">
@@ -78,29 +78,31 @@ function ContactScreen() {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                     <div className="row g-4 justify-content-center">
-                        <div className="col-md-6 col-lg-10 col-xl-6  fadeInLeft">
+                        <div className="col-md-7 col-lg-12 col-xl-7  fadeInLeft">
                             <div className="contact-info-item">
                                 <div className="contact-item-thumb">
                                     <img src="assets/images/contact/email.png" alt="contact"/>
                                 </div>
                                 <div className="contact-item-content">
                                     <h4 className="title">Email Address</h4>
-                                    <a href="Mailto:mdudnfsddf@gmal.com"><span className="__cf_email__" data-cfemail="04676b6a7065677044617c65697468612a676b69">[email&#160;protected]</span></a>
-                                    <a href="Mailto:mdudnfsddf@gmal.com"><span className="__cf_email__" data-cfemail="4b22252d240b2e332a263b272e65282426">[email&#160;protected]</span></a>
+                                    <a href="Mailto:support@megaexpertfinance.com"><span className="__cf_email__" d>support@megaexpertfinance.com</span></a>
+                                    {/* <a href="Mailto:mdudnfsddf@gmal.com"><span className="__cf_email__" data-cfemail="4b22252d240b2e332a263b272e65282426">[email&#160;protected]</span></a> */}
                                 </div>
                             </div>
                         </div>
-                        <div className="col-md-6 col-lg-10 col-xl-6  fadeInLeft">
+
+
+                        <div className="col-md-5 col-lg-9 col-xl-5  fadeInLeft">
                             <div className="contact-info-item">
                                 <div className="contact-item-thumb">
                                     <img src="assets/images/contact/phone.png" alt="contact"/>
                                 </div>
                                 <div className="contact-item-content">
                                     <h4 className="title">Contact Number</h4>
-                                    <a href="Tel:90172834">(123) 456-7890 - 00521</a>
-                                    <a href="Tel:90172834">(123) 456-7891 - 00626</a>
+                                    <a href="Tel:+17742056468">+1(774) 205-6468</a>
+                                    {/* <a href="Tel:90172834">(123) 456-7891 - 00626</a> */}
                                 </div>
                             </div>
                         </div>

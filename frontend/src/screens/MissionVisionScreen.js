@@ -1,5 +1,7 @@
 import React from 'react'
 import BannerBox from '../components/BannerBox'
+import CommisionBox from '../components/CommisionBox'
+import PlanBox from '../components/PlanBox'
 import ProfitCalculatorBox from '../components/ProfitCalculatorBox'
 
 function MissionVisionScreen() {
@@ -22,14 +24,14 @@ function MissionVisionScreen() {
                         <div className="mission-vision-content">
                             <div className="section-header">
                                 <h2 className="title">Our Mission</h2>
-                                <p>fermentum metus libero dolorla  liberrbised ligula curabitur kommodo</p>
+                                <p>We are unlocking the potentials of the blockchain industry, Exploring the Crypto world and Empower Crypto & DeFi enthusiasts to achieve their dreams — let our passion fuel your dreams.</p>
                             </div>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos tempora vero explicabo labore quo dolore dolores asperiores aperiam eaque similique fugiat, maiores animi deleniti, obcaecati dolorum, magnam recusandae quasi? Excepturi.maiores animi deleniti, obcaecati dolorum, magnam recusandae quasi? Excepturi.
+                                We built Mega Expert with the passion to help users and our Cryptocommunity make massive profits from the volatility of the Financial market.
                             </p>
                             <ul className="info-list">
                                 <li>
-                                    low investment
+                                    High ROI
                                 </li>
                                 <li>
                                     over view on service
@@ -38,7 +40,7 @@ function MissionVisionScreen() {
                                     24/7 customer support
                                 </li>
                                 <li>
-                                    life time membership
+                                    Earn through affiliate
                                 </li>
                             </ul>
                         </div>
@@ -57,25 +59,15 @@ function MissionVisionScreen() {
                         <div className="mission-vision-content">
                             <div className="section-header">
                                 <h2 className="title">Our Vision</h2>
-                                <p>fermentum metus libero dolorla  liberrbised ligula curabitur kommodo</p>
+                                <p>We constantly Listen, Care, and Improve. We aim to revolutionize the industry by fusing the best of cryptocurrency and traditional finance.</p>
                             </div>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos tempora vero explicabo labore quo dolore dolores asperiores aperiam eaque similique fugiat, maiores animi deleniti, obcaecati dolorum, magnam recusandae quasi? Excepturi.maiores animi deleniti, obcaecati dolorum, magnam recusandae quasi? Excepturi.
+                                Our innovative, highly advanced, user-friendly platform has been designed from the ground-up using best-in-class infrastructure to provide our users with the industry’s safest, fastest, fairest and most transparent trading experience.
                             </p>
-                            <ul className="info-list">
-                                <li>
-                                    low investment
-                                </li>
-                                <li>
-                                    over view on service
-                                </li>
-                                <li>
-                                    24/7 customer support
-                                </li>
-                                <li>
-                                    life time membership
-                                </li>
-                            </ul>
+
+                            <p>
+                                We endeavor to provide a professional, smart, intuitive and innovative online trading, investing and staking experience for retail and institutional clients around the world.
+                            </p>
                         </div>
                     </div>
                     <div className="col-lg-6 d-none d-lg-block fadeInRight">
@@ -90,129 +82,23 @@ function MissionVisionScreen() {
 
 
 
-        <section className="plan-section padding-top padding-bottom overflow-hidden">
-            <div className="container">
-                <div className="row justify-content-center">
-                    <div className="col-lg-7">
-                        <div className="section-header text-center">
-                            <span className="subtitle  fadeInUp">choose your plan</span>
-                            <h2 className="title  fadeInUp" data--delay=".5s">best investment platform for your profit</h2>
-                            <p className=" fadeInUp" data--delay=".6s">
-                                Praesent nibh aut vivamusad quis in tortor aenean ligula non lacinia quisque. Purus nunc tellus ac nulla praesent quis porttitor sit arcu congue auctor ut amet. 
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div className="row gy-4 justify-content-center">
-                    <div className="col-sm-6 col-md-10 col-xl-6  slideInUp">
-                        <div className="plan-item-two">
-                            <div className="left-content">
-                                <h2 className="title">07% Daily</h2>
-                                <h5 className="subtitle">for 30 calendar days</h5>
-                            </div>
-                            <div className="right-content">
-                                <ul className="plan-info">
-                                    <li><span className="info">principal</span><span className="result">Included</span></li>
-                                    <li><span className="info">Total retan </span><span className="result">160%</span></li>
-                                    <li><span className="info">Minimum</span><span className="result">15 USD</span></li>
-                                    <li><span className="info">Maximum</span><span className="result">1000 USD</span></li>
-                                </ul>
-                            </div>
-                            <div className="plan-hover">
-                                <div className="left-content">
-                                    <h2 className="title">07% Daily</h2>
-                                    <h5 className="subtitle">for 30 calendar days</h5>
-                                </div>
-                                <div className="right-content">
-                                    <a href="login" className="invest-button">Invest Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-sm-6 col-md-10 col-xl-6  slideInUp">
-                        <div className="plan-item-two">
-                            <div className="left-content">
-                                <h2 className="title">10% Daily</h2>
-                                <h5 className="subtitle">for 15 calendar days</h5>
-                            </div>
-                            <div className="right-content">
-                                <ul className="plan-info">
-                                    <li><span className="info">principal</span><span className="result">Included</span></li>
-                                    <li><span className="info">Total retan </span><span className="result">160%</span></li>
-                                    <li><span className="info">Minimum</span><span className="result">15 USD</span></li>
-                                    <li><span className="info">Maximum</span><span className="result">1000 USD</span></li>
-                                </ul>
-                            </div>
-                            <div className="plan-hover">
-                                <div className="left-content">
-                                    <h2 className="title">10% Daily</h2>
-                                    <h5 className="subtitle">for 15 calendar days</h5>
-                                </div>
-                                <div className="right-content">
-                                    <a href="login" className="invest-button">Invest Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-sm-6 col-md-10 col-xl-6  slideInUp">
-                        <div className="plan-item-two">
-                            <div className="left-content">
-                                <h2 className="title">25% Daily</h2>
-                                <h5 className="subtitle">for 45 calendar days</h5>
-                            </div>
-                            <div className="right-content">
-                                <ul className="plan-info">
-                                    <li><span className="info">principal</span><span className="result">Included</span></li>
-                                    <li><span className="info">Total retan </span><span className="result">160%</span></li>
-                                    <li><span className="info">Minimum</span><span className="result">15 USD</span></li>
-                                    <li><span className="info">Maximum</span><span className="result">1000 USD</span></li>
-                                </ul>
-                            </div>
-                            <div className="plan-hover">
-                                <div className="left-content">
-                                    <h2 className="title">25% Daily</h2>
-                                    <h5 className="subtitle">for 45 calendar days</h5>
-                                </div>
-                                <div className="right-content">
-                                    <a href="login" className="invest-button">Invest Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-sm-6 col-md-10 col-xl-6  slideInUp">
-                        <div className="plan-item-two">
-                            <div className="left-content">
-                                <h2 className="title">30% Daily</h2>
-                                <h5 className="subtitle">for 60 calendar days</h5>
-                            </div>
-                            <div className="right-content">
-                                <ul className="plan-info">
-                                    <li><span className="info">principal</span><span className="result">Included</span></li>
-                                    <li><span className="info">Total retan </span><span className="result">160%</span></li>
-                                    <li><span className="info">Minimum</span><span className="result">15 USD</span></li>
-                                    <li><span className="info">Maximum</span><span className="result">1000 USD</span></li>
-                                </ul>
-                            </div>
-                            <div className="plan-hover">
-                                <div className="left-content">
-                                    <h2 className="title">30% Daily</h2>
-                                    <h5 className="subtitle">for 60 calendar days</h5>
-                                </div>
-                                <div className="right-content">
-                                    <a href="login" className="invest-button">Invest Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="button text-center">
-                    <a href="investment-plan-01" className="cmn--btn btn--base">Discover More</a>
-                </div>
-            </div>
-        </section>
+        
+        <CommisionBox/>
+    
 
 
 
+
+        <PlanBox/>
+
+
+
+
+        <div className="padding-top"></div>
+
+
+
+        
 
         <ProfitCalculatorBox/>
     </>

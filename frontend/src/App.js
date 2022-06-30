@@ -1,4 +1,5 @@
 import React from 'react';
+import $ from 'jquery'
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import AboutScreen from './screens/AboutScreen';
 import ContactScreen from './screens/ContactScreen';
@@ -7,10 +8,71 @@ import HomeScreen from "./screens/HomeScreen";
 import LoginScreen from './screens/LoginScreen';
 import MissionVisionScreen from './screens/MissionVisionScreen';
 import SignupScreen from './screens/SignupScreen';
+import PageNotFoundScreen from './screens/PageNotFoundScreen';
+import PlanScreen from './screens/PlanScreen';
+import AffiliateScreen from './screens/AffiliateScreen';
+
+function dropDown(id) {
+    var dropElement = document.getElementById(id);
+    var element = $(dropElement).parent('li');
+    element.toggleClass('open');
+
+    if (element.hasClass('open')) {
+        element.removeClass('open');
+        element.find('li').toggleClass('open');
+        element.find('ul').slideUp(400, "swing");
+
+
+        console.log('low');
+        element.addClass('open');
+        element.children('ul').slideDown(400, "swing");
+        element.siblings('li').children('ul').slideUp(400, "swing");
+        element.siblings('li').toggleClass('open');
+        element.siblings('li').find('li').toggleClass('open');
+        element.siblings('li').find('ul').slideUp(400, "swing");
+    } else {
+        element.addClass('open');
+        element.children('ul').slideDown(400, "swing");
+        element.siblings('li').children('ul').slideUp(400, "swing");
+        element.siblings('li').toggleClass('open');
+        element.siblings('li').find('li').toggleClass('open');
+        element.siblings('li').find('ul').slideUp(400, "swing");
+
+
+        console.log('hi');
+        element.removeClass('open');
+        element.find('li').toggleClass('open');
+        element.find('ul').slideUp(400, "swing");
+    }
+}
+
 function App() {
+
+    
+    
+    function toggleNav() {
+        $('.menu,.header-trigger').toggleClass('active')
+        // $('.overlay').toggleClass('overlay-color')
+        // $('.overlay').removeClass('active')
+
+        $('html, body').animate({
+            scrollTop: 0
+        }, 300);
+    }
+
+
+    function toggleOverlay() {
+        $('.overlay').removeClass('overlay-color')
+        $('.menu, .header-trigger').removeClass('active')
+    }
+
+
+
   return (
     <BrowserRouter>
       <div className="App">
+
+        <div className="overlay" onClick={toggleOverlay}></div>
 
         <header className="header">
           <div className="header-bottom">
@@ -21,55 +83,76 @@ function App() {
                         <img src="/assets/images/logo.png" alt="logo" />
                     </Link>
                 </div>
-                <div className="header-trigger d-block d-lg-none">
+                <div className="header-trigger d-block d-lg-none" onClick={toggleNav}>
                     <span></span>
                 </div>
                 <ul className="menu">
                     <li>
-                        <Link to="/">Home</Link>
+                        <Link to="/" onClick={toggleNav}>Home</Link>
                     </li>
 
                     <li>
-                        <Link to="/about">About</Link>
+                        <Link to="/about" onClick={toggleNav}>About</Link>
                     </li>
 
-                    <li className="has-sub-menu">
-                        <Link to="#">Plan</Link>
+                    <li>
+                        <Link to="/plan" onClick={toggleNav}>Plans</Link>
+                    </li>
+
+                    {/* <li className="has-sub-menu" onClick={dropDown}>
+                        <Link to="#" id="plan" onClick={
+                            (e) => {
+                                e.preventDefault();
+                                dropDown('plan')
+                            }
+                        }>Plan</Link>
                         <ul className="sub-menu">
                             <li>
-                                <Link to="/investment-plan-01">Investment Plan 01</Link>
+                                <Link to="/bronze" onClick={toggleNav}>Bronze Plan</Link>
                             </li>
                             <li>
-                                <Link to="/investment-plan-02">Investment Plan 02</Link>
+                                <Link to="/silver" onClick={toggleNav}>Silver Plan</Link>
                             </li>
                             <li>
-                                <Link to="/investment-plan-03">Investment Plan 03</Link>
+                                <Link to="/gold" onClick={toggleNav}>Gold Plan</Link>
                             </li>
                         </ul>
+                    </li> */}
+
+                    <li>
+                        <Link to="/mission-vision" onClick={toggleNav}>Mission & Vision</Link>
                     </li>
 
                     <li>
-                        <Link to="/mission-vision">Mission & Vision</Link>
+                        <Link to="/faq" onClick={toggleNav}>Faq</Link>
                     </li>
 
                     <li>
-                        <Link to="/faq">Faq</Link>
+                        <Link to="/affiliate" onClick={toggleNav}>Affiliate</Link>
                     </li>
                   
                     <li>
-                        <Link to="/contact">Contact</Link>
+                        <Link to="/contact" onClick={toggleNav}>Contact</Link>
                     </li>
                     
                     <li className="has-sub-menu">
-                        <Link to="#">Account</Link>
+                        <Link to="#" id="account" onClick={
+                            (e) => {
+                                e.preventDefault();
+                                dropDown('account')
+                            }
+                        }>Account</Link>
                         <ul className="sub-menu">
                             <li>
-                                <Link to="/login">Log In</Link>
+                                <Link to="/login" onClick={toggleNav}>Log In</Link>
                             </li>
                             <li>
-                                <Link to="/sign-up">Sign Up</Link>
+                                <Link to="/sign-up" onClick={toggleNav}>Sign Up</Link>
                             </li>
                         </ul>
+                    </li>
+                    <li>
+                        <a href="investment-plan-01.html" className="cmn--btn">Invest Now</a>
                     </li>
                 </ul>
               </div>
@@ -77,15 +160,18 @@ function App() {
           </div>
         </header>
 
-        <main>
+        <main style={{ minHeight: "280px" }}>
           <Routes>
             <Route path="/" element={<HomeScreen />} exact></Route>
             <Route path="/about" element={<AboutScreen />}></Route>
+            <Route path="/plan" element={<PlanScreen />}></Route>
             <Route path="/mission-vision" element={<MissionVisionScreen />}></Route>
             <Route path="/faq" element={<FAQScreen />}></Route>
+            <Route path="/affiliate" element={<AffiliateScreen />}></Route>
             <Route path="/contact" element={<ContactScreen />}></Route>
             <Route path="/login" element={<LoginScreen />}></Route>
             <Route path="/sign-up" element={<SignupScreen />}></Route>
+            <Route path="*" element={<PageNotFoundScreen />}></Route>
           </Routes> 
         </main>
 
@@ -153,13 +239,15 @@ function App() {
                                   <i className="las la-angle-double-right"></i>Mission & Vision</Link>
                               </li> 
                               <li>
-                                  <Link to="/Login">
-                                      
+                                  <Link to="/affiliate">
+                                  <i className="las la-angle-double-right"></i>Affiliate</Link>
+                              </li>
+                              <li>
+                                  <Link to="/Login">   
                                   <i className="las la-angle-double-right"></i>Login</Link>
                               </li>
                               <li>
-                                  <Link to="/signup">
-                                      
+                                  <Link to="/sign-up"> 
                                   <i className="las la-angle-double-right"></i>Signup</Link>
                               </li>
                           </ul>
@@ -170,33 +258,28 @@ function App() {
                           <h4 className="widget-title">Investment</h4>
                           <ul className="footer-links">
                               <li>
-                                  <Link to="/investment-plan-01">
-                                      
-                                  <i className="las la-angle-double-right"></i>Starter Plan</Link>
-                              </li>
-                              <li>
-                                  <Link to="/investment-plan-02">
+                                  <Link to="/plan">
                                       
                                   <i className="las la-angle-double-right"></i>
-                                  Medium Plan</Link>
+                                  All Plan</Link>
                               </li>
                               <li>
-                                  <Link to="/investment-plan-03">
+                                  <Link to="/bronze">
                                       
                                   <i className="las la-angle-double-right"></i>
-                                  Special Plan </Link>
+                                  Bronze Plan</Link>
                               </li>
                               <li>
-                                  <Link to="/investment-plan-02">
-                                      
-                                  <i className="las la-angle-double-right"></i>
-                                  Vip Plan</Link>
-                              </li>
-                              <li>
-                                  <Link to="/investment-plan-01">
+                                  <Link to="/silver">
                                       
                                   <i className="las la-angle-double-right"></i>
                                   Silver Plan</Link>
+                              </li>
+                              <li>
+                                  <Link to="/gold">
+                                      
+                                  <i className="las la-angle-double-right"></i>
+                                  Gold Plan </Link>
                               </li>
                           </ul>
                       </div>

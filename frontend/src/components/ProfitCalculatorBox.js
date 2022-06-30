@@ -10,22 +10,29 @@ function ProfitCalculatorBox() {
                         <div className="row g-4">
                             <div className="col-lg-4 col-md-6">
                                 <div className="form--group">
-                                    <select>
+                                    <select style={{ display: 'none' }}>
                                         <option value="plan01">Select the Plan</option>
                                         <option value="plan01">Business Plan</option>
                                         <option value="plan01">Professional Plan</option>
                                         <option value="plan01">Individual Plan</option>
                                     </select>
+                                    <div class="nice-select" tabindex="0"><span class="current">Select the Plan</span><ul class="list"><li data-value="plan01" class="option selected">Select the Plan</li><li data-value="plan01" class="option">Business Plan</li><li data-value="plan01" class="option">Professional Plan</li><li data-value="plan01" class="option">Individual Plan</li></ul></div>
                                 </div>
                             </div>
                             <div className="col-lg-4 col-md-6">
                                 <div className="form--group">
-                                    <select>
+                                    <select style={{ display: 'none' }}>
                                         <option value="plan01">Select the Currency</option>
                                         <option value="plan01">Bitcoin</option>
                                         <option value="plan01">Ethereum</option>
-                                        <option value="plan01">Ripple</option>
+                                        <option value="plan01">BNB</option>
+                                        <option value="plan01">Solana</option>
+                                        <option value="plan01">Dash</option>
+                                        <option value="plan01">Litecoin</option>
+                                        <option value="plan01">Tether</option>
+                                        <option value="plan01">Shib</option>
                                     </select>
+                                    <div class="nice-select" tabindex="0"><span class="current">Select the Currency</span><ul class="list"><li data-value="plan01" class="option selected">Select the Currency</li><li data-value="plan01" class="option">Bitcoin</li><li data-value="plan01" class="option">Ethereum</li><li data-value="plan01" class="option">Ripple</li></ul></div>
                                 </div>
                             </div>
                             <div className="col-lg-4">

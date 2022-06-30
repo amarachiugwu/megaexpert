@@ -1,7 +1,112 @@
-import React from "react";
+import React, { useEffect } from "react";
+import Slider from "react-slick";
+import HelpBox from '../components/HelpBox';
 import WhyUsBox from "../components/WhyUsBox";
-
+import ProfitCalculatorBox from '../components/ProfitCalculatorBox'
+import PaymentGatewayBox from "../components/PaymentGatewayBox";
+import PlanBox from "../components/PlanBox";
+import AffiliateBox from "../components/AffiliateBox";
 function HomeScreen () {
+
+    useEffect(() => {
+        
+        // $(".counter-item").each(function () {
+        //     $(this).isInViewport(function (status) {
+        //       if (status === "entered") {
+        //         for (var i = 0; i < document.querySelectorAll(".odometer").length; i++) {
+        //           var el = document.querySelectorAll('.odometer')[i];
+        //           el.innerHTML = el.getAttribute("data-odometer-final");
+        //         }
+        //       }
+        //     });
+        // });
+      
+    }, [])
+
+    function NextArrow(props) {
+        const { onClick } = props;
+        return (
+            <i 
+                onClick={onClick}
+                className="las la-arrow-right arrow-right slick-arrow"></i>
+        );
+    }
+
+    function PrevArrow(props) {
+        const { onClick } = props;
+        return (
+            <i 
+                onClick={onClick}
+                className="las la-arrow-left arrow-left slick-arrow"></i>
+        );
+    }
+
+    var testimonials = {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        arrows: true,
+        dots: false,
+        focusOnSelect: true,
+        autoplay: true,
+        pauseOnHover: true,
+        centerMode: true,
+        fade: true,
+        speed: 1000,
+        nextArrow: <NextArrow/>,
+        prevArrow: <PrevArrow/>,
+    }
+
+    const styles = {
+        testimonialImg:{
+            borderRadius: '15px 0px 15px 15px',
+            overflow: 'hidden',
+            width: '100px',
+            margin: '0 auto',
+        }
+    }
+
+    var sponsors = {
+        slidesToShow: 6,
+        slidesToScroll: 2,
+        infinite: true,
+        dots: false,
+        arrows: false,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        responsive: [
+          {
+            breakpoint: 1200,
+            settings: {
+              slidesToShow: 5,
+              slidesToScroll: 1
+            }
+          },
+          {
+            breakpoint: 991,
+            settings: {
+              slidesToShow: 4,
+              slidesToScroll: 1
+            }
+          },
+          {
+            breakpoint: 767,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 1
+            }
+          },
+          {
+            breakpoint: 500,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1
+            }
+          },
+      
+        ]
+    };
+
 
     return (
         
@@ -25,7 +130,7 @@ function HomeScreen () {
                                 <h1 className="banner-title">Mega <span className="text--base">Expert </span><span> Finance</span></h1>
                                 <span className="subtitle" style={{ textTransform:"lowercase" }}>DECENTRALIZED TRADING & INVESTMENT PLATFORM WITH BLOCKCHAIN INFRASTRUCTURE</span>
                                 <div className="button-group d-flex flex-wrap align-items-center">
-                                    <a href="signup" className="cmn--btn btn--secondary">get started</a>
+                                    <a href="sign-up" className="cmn--btn btn--secondary">get started</a>
                                 </div>
                             </div>
                         </div>
@@ -36,7 +141,7 @@ function HomeScreen () {
 
 
 
-            <section className="how-work padding-top">
+            <section className="how-work padding-top padding-bottom">
                 <div className="container">
                     <div className="row justif-content-center align-items-center">
                         <div className="col-lg-6">
@@ -93,6 +198,85 @@ function HomeScreen () {
                 </div>
             </section>
 
+            
+
+
+            <div className="sponsor-section wow fadeInUp">
+                <div className="container">
+                    <div className="row justify-content-center">
+                        <div className="col-lg-7">
+                            <div className="section-header text-center">
+                                <h2 className="title wow fadeInUp" data-wow-delay=".4s">Sponsors</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="sponsor-slider">
+                        <Slider {...sponsors}>
+                            <div className="single-slide">
+                                <div className="brand-item">
+                                    <img src="assets/images/sponsor/item1.png" alt=""/>
+                                </div>
+                            </div>
+                            <div className="single-slide">
+                                <div className="brand-item">
+                                    <img src="assets/images/sponsor/item2.png" alt=""/>
+                                </div>
+                            </div>
+                            <div className="single-slide">
+                                <div className="brand-item">
+                                    <img src="assets/images/sponsor/item3.png" alt=""/>
+                                </div>
+                            </div>
+                            <div className="single-slide">
+                                <div className="brand-item">
+                                    <img src="assets/images/sponsor/item4.png" alt=""/>
+                                </div>
+                            </div>
+                            <div className="single-slide">
+                                <div className="brand-item">
+                                    <img src="assets/images/sponsor/item5.png" alt=""/>
+                                </div>
+                            </div>
+                            <div className="single-slide">
+                                <div className="brand-item">
+                                    <img src="assets/images/sponsor/item6.png" alt=""/>
+                                </div>
+                            </div>
+                            <div className="single-slide">
+                                <div className="brand-item">
+                                    <img src="assets/images/sponsor/item1.png" alt=""/>
+                                </div>
+                            </div>
+                            <div className="single-slide">
+                                <div className="brand-item">
+                                    <img src="assets/images/sponsor/item2.png" alt=""/>
+                                </div>
+                            </div>
+                            <div className="single-slide">
+                                <div className="brand-item">
+                                    <img src="assets/images/sponsor/item3.png" alt=""/>
+                                </div>
+                            </div>
+                            <div className="single-slide">
+                                <div className="brand-item">
+                                    <img src="assets/images/sponsor/item4.png" alt=""/>
+                                </div>
+                            </div>
+                            <div className="single-slide">
+                                <div className="brand-item">
+                                    <img src="assets/images/sponsor/item5.png" alt=""/>
+                                </div>
+                            </div>
+                            <div className="single-slide">
+                                <div className="brand-item">
+                                    <img src="assets/images/sponsor/item6.png" alt=""/>
+                                </div>
+                            </div>
+                        </Slider> 
+                    </div>
+                </div>
+            </div>
+
 
 
 
@@ -137,123 +321,60 @@ function HomeScreen () {
 
 
 
-            <section className="plan-section padding-top">
+            <PlanBox/>
+
+
+
+
+            {/* <section className="counter-section padding-top">
                 <div className="container">
-                    <div className="row justify-content-center">
-                        <div className="col-lg-7">
-                            <div className="section-header text-center">
-                                <span className="subtitle wow fadeInUp">choose your plan</span>
-                                <h2 className="title wow fadeInUp" data-wow-delay=".4s">best investment platform for your profit</h2>
+                    <div className="row justif-content-center gy-5">
+                        <div className="col-lg-3 col-sm-6">
+                            <div className="counter-wrapper">
+                                <div className="counter-item">
+                                    <div className="counter-inner">
+                                        <h2 className="counter-sign">$ </h2>
+                                        <span className="odometer title" data-odometer-final="557"></span>
+                                    </div>
+                                </div>
+                                <span className="info">Invested in pitches</span>
                             </div>
                         </div>
-                    </div>
-                    <div className="plan-wrapper row g-4">
-                        <div className="col-sm-6 col-lg-12">
-                            <div className="plan-item wow fadeIn" data-wow-delay=".1s">
-                                <div className="plan-inner-part">
-                                    <h2 className="plan-interest-percent">600%</h2>
+                        <div className="col-lg-3 col-sm-6">
+                            <div className="counter-wrapper">
+                                <div className="counter-item">
+                                    <div className="counter-inner">
+                                        <span className="odometer title" data-odometer-final="254"></span>
+                                        <h2 className="counter-sign">K</h2>
+                                    </div>
                                 </div>
-                                <div className="plan-inner-part">
-                                    <ul className="plan-invest-limit">
-                                        <li>
-                                            <i className="fas fa-check"></i>
-                                            Minimum : $30.00
-                                        </li>
-                                        <li>
-                                            <i className="fas fa-check"></i>
-                                            Maximum : $1500.00
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div className="plan-inner-part">
-                                    <h2 className="plan-invest-time">04 <sub>DAYS</sub></h2>
-                                </div>
-                                <div className="plan-inner-part">
-                                    <a href="login.html" className="cmn--btn-2">Invest now</a>
-                                </div>
+                                <span className="info">Registrated Members</span>
                             </div>
                         </div>
-                        <div className="col-sm-6 col-lg-12">
-                            <div className="plan-item wow fadeIn" data-wow-delay=".2s">
-                                <div className="plan-inner-part">
-                                    <h2 className="plan-interest-percent">700%</h2>
+                        <div className="col-lg-3 col-sm-6">
+                            <div className="counter-wrapper">
+                                <div className="counter-item">
+                                    <div className="counter-inner">
+                                        <span className="odometer title" data-odometer-final="774"></span>
+                                        <h2 className="counter-sign">K</h2>
+                                    </div>
                                 </div>
-                                <div className="plan-inner-part">
-                                    <ul className="plan-invest-limit">
-                                        <li>
-                                            <i className="fas fa-check"></i>
-                                            Minimum : $30.00
-                                        </li>
-                                        <li>
-                                            <i className="fas fa-check"></i>
-                                            Maximum : $1500.00
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div className="plan-inner-part">
-                                    <h2 className="plan-invest-time">10 <sub>DAYS</sub></h2>
-                                </div>
-                                <div className="plan-inner-part">
-                                    <a href="login.html" className="cmn--btn-2">Invest now</a>
-                                </div>
+                                <span className="info">Average Investment</span>
                             </div>
                         </div>
-                        <div className="col-sm-6 col-lg-12">
-                            <div className="plan-item wow fadeIn" data-wow-delay=".3s">
-                                <div className="plan-inner-part">
-                                    <h2 className="plan-interest-percent">800%</h2>
+                        <div className="col-lg-3 col-sm-6">
+                            <div className="counter-wrapper">
+                                <div className="counter-item">
+                                    <div className="counter-inner">
+                                        <span className="odometer title" data-odometer-final="7740"></span>
+                                    </div>
                                 </div>
-                                <div className="plan-inner-part">
-                                    <ul className="plan-invest-limit">
-                                        <li>
-                                            <i className="fas fa-check"></i>
-                                            Minimum : $30.00
-                                        </li>
-                                        <li>
-                                            <i className="fas fa-check"></i>
-                                            Maximum : $1500.00
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div className="plan-inner-part">
-                                    <h2 className="plan-invest-time">07 <sub>DAYS</sub></h2>
-                                </div>
-                                <div className="plan-inner-part">
-                                    <a href="login.html" className="cmn--btn-2">Invest now</a>
-                                </div>
+                                <span className="info">Total Investment Plan</span>
                             </div>
                         </div>
-                        <div className="col-sm-6 col-lg-12">
-                            <div className="plan-item wow fadeIn" data-wow-delay=".4s">
-                                <div className="plan-inner-part">
-                                    <h2 className="plan-interest-percent">1200%</h2>
-                                </div>
-                                <div className="plan-inner-part">
-                                    <ul className="plan-invest-limit">
-                                        <li>
-                                            <i className="fas fa-check"></i>
-                                            Minimum : $30.00
-                                        </li>
-                                        <li>
-                                            <i className="fas fa-check"></i>
-                                            Maximum : $1500.00
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div className="plan-inner-part">
-                                    <h2 className="plan-invest-time">15 <sub>DAYS</sub></h2>
-                                </div>
-                                <div className="plan-inner-part">
-                                    <a href="login.html" className="cmn--btn-2">Invest now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="button text-center wow slideIn pb-4">
-                        <a href="investment-plan-01.html" className="cmn--btn">Discover More</a>
                     </div>
                 </div>
-            </section>
+            </section> */}
 
 
 
@@ -263,56 +384,102 @@ function HomeScreen () {
 
 
 
-            <section className="profit-calculation wow slideInUp overflow-hidden">
+            <section className="testimonial-seciton pb-180">
                 <div className="container">
-                    <div className="profit-calculation-wrapper">
-                        <h3 className="title">Calculate How Much You Profit</h3>
-                        <form className="profit-form">
-                            <div className="row g-4">
-                                <div className="col-lg-4 col-md-6">
-                                    <div className="form--group">
-                                        <select>
-                                            <option value="plan01">Select the Plan</option>
-                                            <option value="plan01">Business Plan</option>
-                                            <option value="plan01">Professional Plan</option>
-                                            <option value="plan01">Individual Plan</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div className="col-lg-4 col-md-6">
-                                    <div className="form--group">
-                                        <select>
-                                            <option value="plan01">Select the Currency</option>
-                                            <option value="plan01">Bitcoin</option>
-                                            <option value="plan01">Ethereum</option>
-                                            <option value="plan01">Ripple</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div className="col-lg-4">
-                                    <div className="form--group">
-                                        <input type="text" className="form--control" placeholder="Enter the Ammount" required />
-                                    </div>
-                                </div>
+                    <div className="row gy-4 align-items-center justify-content-center">
+                        <div className="col-lg-5 d-none d-lg-block  wow slideInLeft">
+                            <div className="testimonial-thumb">
+                                <img src="assets/images/testimonial/thumb2.png" alt="testimonial"/>
                             </div>
-                        </form>
-                        <div className="profit-title-wrapper d-flex justify-content-between my-5 mb-3">
-                            <h5 className="daily-profit text--secondary">Daily Profit - <span className="ammount">0.1200</span>BTC</h5>
-                            <h5 className="daily-profit theme-four">Total Profit - <span className="ammount">24.1200</span>BTC</h5>
                         </div>
-                        <div className="invest-range-area">
-                            <div className="main-amount">
-                                <input type="text" className="calculator-invest" id="btc-amount" readOnly />
+                        <div className="col-lg-7 col-md-10">
+                            <div className="testimonial-content">
+                                <div className="section-header text-center">
+                                    <span className="subtitle wow fadeInUp">our happly client</span>
+                                    <h2 className="title wow fadeInUp" data-wow-delay=".5s">Discover Our Happy 
+                                        Client Feedback</h2>
+                                </div>
+                                <div className="testimonial-slider-wrapper">
+                                    
+                                    <div className="testimonial-slider">
+                                        <Slider
+                                            {...testimonials}
+                                            >
+                                            <div className="content-item">
+                                                <div className="img-item padding bottom" style={styles.testimonialImg}>
+                                                    <img src="assets/images/testimonial/item2.png" alt="testimonial"/>
+                                                </div>
+
+                                                <div className="quote-icon">
+                                                    <i className="las la-quote-left"></i>
+                                                </div>
+                                                <div className="content-inner">
+                                                    <p>
+                                                    Since i started investing with Mega Expert i have stopped investing with other financial institutions including my bank because the services i get here is second to non, kudos to all the team behind this great platform.
+                                                    </p>
+                                                    <h5 className="name">Robindronath Chondro</h5>
+                                                    <span className="designation">Businessman</span>
+                                                </div>
+                                            </div>
+                                            <div className="content-item">
+
+                                                <div className="img-item padding bottom" style={styles.testimonialImg}>
+                                                    <img src="assets/images/testimonial/item3.png" alt="testimonial"/>
+                                                </div>
+
+                                                <div className="quote-icon">
+                                                    <i className="las la-quote-left"></i>
+                                                </div>
+                                                <div className="content-inner">
+                                                    <p>
+                                                        As an investor my major role is to find great platform, individuals and businesses to invest my money so that it can work for me, this platform is one of the platform i invest in, they always deliver in due time.
+                                                    </p>
+                                                    <h5 className="name">Jubayer Al Somser</h5>
+                                                    <span className="designation">Investor</span>
+                                                </div>
+                                            </div>
+                                            <div className="content-item">
+                                                <div className="img-item padding bottom" style={styles.testimonialImg}>
+                                                    <img src="assets/images/testimonial/item4.png" alt="testimonial"/>
+                                                </div>
+
+                                                <div className="quote-icon">
+                                                    <i className="las la-quote-left"></i>
+                                                </div>
+                                                <div className="content-inner">
+                                                    <p>
+                                                        I basically put my money here to earn while i save, instead of saving in my bank which returns little or no intrest, i am satisfieed with the services i get here.
+                                                    </p>
+                                                    <h5 className="name">Raihan Rafuj</h5>
+                                                    <span className="designation">Designer</span>
+                                                </div>
+                                            </div> 
+                                        </Slider>
+                                    </div>
+                                </div>
                             </div>
-                            <div className="invest-amount" data-min="01 BTC" data-max="10000 BTC">
-                                <div id="btc-range" className="invest-range-slider"></div>
-                            </div>
-                            <button type="submit" className="custom-button px-0">Invest now</button>
                         </div>
                     </div>
                 </div>
             </section>
 
+
+
+            <HelpBox/>
+
+
+            
+
+            <AffiliateBox/>
+
+
+
+            <PaymentGatewayBox/>
+
+
+
+
+            <ProfitCalculatorBox/>
         </>
     );
 }
