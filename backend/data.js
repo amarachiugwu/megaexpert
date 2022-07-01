@@ -5,7 +5,7 @@ const data = {
     users: [
       {
         name: 'Basir',
-        email: 'admin@example.com',
+        email: 'admin@megaexpert.com',
         phone: '09056545456',
         country: 'Nigeria',
         currency: 'NGN',
