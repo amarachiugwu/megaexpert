@@ -1,2 +1,2 @@
-# Ecommerce-MERN
-This is an ecommerce site that is built using the MERN Stack 
+MegaExpert 
+This is a HYIP Investment Platform
