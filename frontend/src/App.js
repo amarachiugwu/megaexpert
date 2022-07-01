@@ -1,5 +1,7 @@
 import React from 'react';
+import { useDispatch, useSelector } from "react-redux";
 import $ from 'jquery'
+import { signout } from "./actions/userActions";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import AboutScreen from './screens/AboutScreen';
 import ContactScreen from './screens/ContactScreen';
@@ -47,7 +49,12 @@ function dropDown(id) {
 }
 
 function App() {
-
+    const userSignin = useSelector((state) => state.userSignin);
+    const { userInfo } = userSignin;
+    const dispatch = useDispatch();
+    const signoutHandler = () => {
+    dispatch(signout());
+  };
     
     
     function toggleNav() {
@@ -136,20 +143,31 @@ function App() {
                     </li>
                     
                     <li className="has-sub-menu">
-                        <Link to="#" id="account" onClick={
-                            (e) => {
-                                e.preventDefault();
-                                dropDown('account')
-                            }
-                        }>Account</Link>
-                        <ul className="sub-menu">
+                       
+                        {userInfo ? (
                             <li>
-                                <Link to="/login" onClick={toggleNav}>Log In</Link>
-                            </li>
-                            <li>
-                                <Link to="/sign-up" onClick={toggleNav}>Sign Up</Link>
-                            </li>
-                        </ul>
+                            <Link to="#signout" onClick={signoutHandler}>Sign Out</Link>
+                        </li>
+                        ) : (
+                            <>
+                                <Link to="#" id="account" onClick={
+                                    (e) => {
+                                        e.preventDefault();
+                                        dropDown('account')
+                                    }
+                                }>Account</Link>
+                                <ul className="sub-menu">
+                                    <li>
+                                        <Link to="/login" onClick={toggleNav}>Log In</Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/sign-up" onClick={toggleNav}>Sign Up</Link>
+                                    </li>
+                                </ul>
+                            </>
+                        
+                        )}
+
                     </li>
                     <li>
                         <a href="investment-plan-01.html" className="cmn--btn">Invest Now</a>
