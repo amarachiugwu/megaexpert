@@ -17,9 +17,9 @@ mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/megaexpert', {
 
 app.use('/api/users', userRouter);
 
-app.get('/', (req, res) => {
-    res.send('Server is ready');
-} );
+// app.get('/', (req, res) => {
+//     res.send('Server is ready');
+// } );
 
 const __dirname = path.resolve();
 app.use(express.static(path.join(__dirname, '/frontend/build')));
